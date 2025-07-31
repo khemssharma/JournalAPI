@@ -1,0 +1,38 @@
+GET http://localhost:8080/health-check
+
+### POST Request to Create a Journal Entry
+POST http://localhost:8080/journal
+Content-Type: application/json
+
+{
+  "id": "1",
+  "title": "31-jul",
+  "content": "I am learning Spring Boot and REST APIs."
+}
+
+### GET Request to Retrieve Journal Entries
+GET http://localhost:8080/journal
+
+### GET one Journal Entry by ID
+GET http://localhost:8080/journal/id/1
+
+### Delete one Journal Entry by ID
+DELETE http://localhost:8080/journal/id/1
+
+### Update to Create a Journal Entry
+PUT http://localhost:8080/journal/id/1
+Content-Type: application/json
+
+{
+  "id": "1",
+  "title": "31-jul",
+  "content": "I have lund Spring Boot and REST APIs."
+}
+
+### Get Twice of the number
+POST http://localhost:8080/journal/sum
+Content-Type: application/json
+
+{
+  "number": 5
+}
