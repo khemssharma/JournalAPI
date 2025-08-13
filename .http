@@ -13,19 +13,18 @@ Content-Type: application/json
 GET http://localhost:8080/journal
 
 ### GET one Journal Entry by ID
-GET http://localhost:8080/journal/id/1
+GET http://localhost:8080/journal/id/689c5033ae6b3277573a225e0
 
 ### Delete one Journal Entry by ID
-DELETE http://localhost:8080/journal/id/1
+DELETE http://localhost:8080/journal/id/689c5a09b2342aba1a1602e0
 
 ### Update to Create a Journal Entry
-PUT http://localhost:8080/journal/id/1
+PUT http://localhost:8080/journal/id/689c5033ae6b3277573a225e
 Content-Type: application/json
 
 {
-  "id": "1",
-  "title": "31-jul",
-  "content": "I have lund Spring Boot and REST APIs."
+  "title": "Morning",
+  "content": "Implemented all the CRUD operations."
 }
 
 ### Get Twice of the number
