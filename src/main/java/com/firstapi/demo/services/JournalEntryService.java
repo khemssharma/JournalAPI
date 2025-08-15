@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.bson.types.ObjectId;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class JournalEntryService {
@@ -21,13 +22,14 @@ public class JournalEntryService {
     @Autowired
     private UserService userService;
 
+    @Transactional
     public void saveEntry(JournalEntry journalEntry, String userName) {
         User user = userService.findByUserName(userName);
         journalEntry.setDate(LocalDateTime.now());
         JournalEntry savedEntry = journalEntryRepository.save(journalEntry);
         user.getJournalEntries().add(savedEntry);
+        // user.setUserName(null); // this line was used to test @Transactional
         userService.save(user);
-
     }
     public void saveEntry(JournalEntry journalEntry) {
         journalEntryRepository.save(journalEntry);
