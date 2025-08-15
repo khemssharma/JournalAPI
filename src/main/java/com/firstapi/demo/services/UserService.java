@@ -1,30 +1,30 @@
 package com.firstapi.demo.services;
 
-import com.firstapi.demo.entity.JournalEntry;
-import com.firstapi.demo.repository.JournalEntryRepository;
+import com.firstapi.demo.entity.User;
+import com.firstapi.demo.repository.UserRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
-import org.bson.types.ObjectId;
-
 @Service
-public class JournalEntryService {
+public class UserService {
 
     @Autowired
-    private JournalEntryRepository journalEntryRepository;
+    private UserRepository userRepository;
 
-    public JournalEntry save(JournalEntry entry) {
-        return journalEntryRepository.save(entry);
+    public User save(User entry) {
+        return userRepository.save(entry);
     }
-    public List<JournalEntry> findAll() {
-        return journalEntryRepository.findAll();
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
-    public Optional<JournalEntry> findById(ObjectId id) {
-        return journalEntryRepository.findById(id);
+    public User findByUserName(String userName) {
+        return userRepository.findByUserName(userName);
     }   
     public void deleteById(ObjectId id) {
-        journalEntryRepository.deleteById(id);
+        userRepository.deleteById(id);
     }   
 }

@@ -1,30 +1,48 @@
 GET http://localhost:8080/health-check
 
-### POST Request to Create a Journal Entry
-POST http://localhost:8080/journal
+### POST Request to Create a User
+POST http://localhost:8080/user
 Content-Type: application/json
 
 {
-  "title": "Morning",
-  "content": "Went to the gym and had a healthy breakfast."
+  "userName": "Model",
+  "password": "password123"
 }
 
-### GET Request to Retrieve Journal Entries
-GET http://localhost:8080/journal
-
-### GET one Journal Entry by ID
-GET http://localhost:8080/journal/id/689c5033ae6b3277573a225e0
-
-### Delete one Journal Entry by ID
-DELETE http://localhost:8080/journal/id/689c5a09b2342aba1a1602e0
-
-### Update to Create a Journal Entry
-PUT http://localhost:8080/journal/id/689c5033ae6b3277573a225e
+### POST Request to Save an entry to a User
+POST http://localhost:8080/journal/Model
 Content-Type: application/json
 
 {
   "title": "Morning",
   "content": "Implemented all the CRUD operations."
+}
+
+### GET Request to Retrieve Journal Entries
+GET http://localhost:8080/journal/Model
+
+### Update a User
+PUT http://localhost:8080/user/Model
+Content-Type: application/json
+
+{
+  "userName": "Model",
+  "password": "password1234"
+}
+
+### GET one Journal Entry by ID
+GET http://localhost:8080/journal/id/689f1cdc943f41e7043e8b61
+
+### Delete one Journal Entry by ID
+DELETE http://localhost:8080/journal/id/Model/689f1cdc943f41e7043e8b61
+
+### Update a Journal Entry
+PUT http://localhost:8080/journal/id/Model/689f1d69943f41e7043e8b64
+Content-Type: application/json
+
+{
+  "title": "Morning",
+  "content": "Completed useDBRef"
 }
 
 ### Get Twice of the number
